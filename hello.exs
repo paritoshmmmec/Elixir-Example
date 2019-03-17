@@ -5,14 +5,50 @@ IO.puts("Hello to elixir.")
 ## Here right value will be matched against unbounded x to pass this now x have to be 1
 ## so match operator
 x = 1
+IO.puts(x)
 
 ## You can rebound values in elixir.
 x = 2
 
 ## this code will throw MatchError no match of right hand side value: 2 Uncomment this line to see the real error
 ## 3 = x
+IO.puts(x)
 
-IO.puts("Proving bool are actually ")
-IO.puts :true == true
+## Proving bool are actually
+IO.puts(true == true)
+IO.puts(:ok === :ok)
+IO.puts(:error === :ok)
+IO.puts(:error === :error)
+IO.puts(:error === :error)
+
+## tuples
+tuple = {1, "200", :ok}
+{1, a, :ok} = tuple
+IO.puts(a)
+IO.inspect(a)
+
+## list
+list = [4,6,8,9, 29]
+IO.puts("===== Original list ==========")
+IO.inspect(list)
+
+[head | tail] = list
+IO.puts("===== First pass ==========")
+IO.puts(head)
+IO.inspect(tail)
+
+[head2 | tail2] = tail
+IO.puts("===== Second pass ==========")
+IO.puts(head2)
+IO.inspect(tail2)
+
+[head3 | tail3] = tail2
+IO.puts("===== Third pass ==========")
+IO.puts(head3)
+IO.inspect(tail3)
 
 
+[head | tail] = tail3
+IO.puts("===== Third pass ==========")
+IO.puts(head)
+IO.inspect(tail)
