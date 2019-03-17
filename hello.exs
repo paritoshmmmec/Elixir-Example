@@ -28,7 +28,7 @@ IO.puts(a)
 IO.inspect(a)
 
 ## list
-list = [4,6,8,9, 29]
+list = [4, 6, 8, 9, 29]
 IO.puts("===== Original list ==========")
 IO.inspect(list)
 
@@ -47,8 +47,13 @@ IO.puts("===== Third pass ==========")
 IO.puts(head3)
 IO.inspect(tail3)
 
-
 [head | tail] = tail3
 IO.puts("===== Third pass ==========")
 IO.puts(head)
 IO.inspect(tail)
+
+# keyword list is mix of tuple and list.
+success_file = [{:content, "File content"}, {:ok, "true"}]
+error_file = [{:content, nil}, {:error, "true"}]
+IO.puts(success_file[:ok])
+IO.puts(error_file[:error])
