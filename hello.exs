@@ -57,3 +57,24 @@ success_file = [{:content, "File content"}, {:ok, "true"}]
 error_file = [{:content, nil}, {:error, "true"}]
 IO.puts(success_file[:ok])
 IO.puts(error_file[:error])
+
+## array map
+
+# Mapped
+
+return_from_function = %{:ok => "success", :error => nil, :content => "Hello world"}
+%{:ok => success, :content => content} = return_from_function
+IO.inspect(success)
+IO.inspect(content)
+
+defmodule ModulePlayground do
+  ##space is needed after colon , else you will get complie error
+  import IO, only: [puts: 1]
+  def say_here do
+    puts("here")
+  end
+end
+
+
+
+ModulePlayground.say_here
