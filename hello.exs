@@ -75,6 +75,3 @@ defmodule ModulePlayground do
   end
 end
 
-
-
-ModulePlayground.say_here
